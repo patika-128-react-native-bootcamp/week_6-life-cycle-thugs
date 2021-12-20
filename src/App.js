@@ -17,11 +17,7 @@ import {View, Text} from 'react-native';
  * ## Dil desteği için opsiyonel ##
  * React i18next: https://react.i18next.com/
  *
-<<<<<<< HEAD
- * Başarılar.......<<
-=======
  * Başarılar.....
->>>>>>> f53fb80624f793299b8182d97460a43c78597b68
  */
 
 export default function App() {
