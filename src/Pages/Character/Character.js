@@ -1,22 +1,34 @@
 import React, {useState, useEffect} from 'react';
 import {Text, View, SafeAreaView, FlatList} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+
 import useFetch from '../../hooks/useFetch';
 import styles from './Character.styles';
 import SearchBar from '../../Components/SearchBar';
 import CharacterCard from '../../Components/CharacterCard';
+import routes from '../../Navigation/routes';
 
 const Character = () => {
+  const navigation = useNavigation();
   const {loading, error, data} = useFetch('characters');
   const [charactersData, setCharactersData] = useState([]);
 
   useEffect(() => {
     if (data !== null) {
       setCharactersData(data);
-      console.log('data', data);
     }
   }, [data]);
 
-  const renderCharacterList = ({item}) => <CharacterCard characters={item} />;
+  const handleCharacterDetail = id => {
+    navigation.navigate(routes.CHARACTER_DETAIL_PAGE, {id});
+  };
+
+  const renderCharacterList = ({item}) => (
+    <CharacterCard
+      characters={item}
+      onSelect={() => handleCharacterDetail(item.id)}
+    />
+  );
 
   const handleChangeText = text => {
     if (text !== null || text !== '') {

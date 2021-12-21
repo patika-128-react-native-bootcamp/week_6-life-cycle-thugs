@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
-    height: 250,
+    height: 350,
   },
   detail_container: {
     width: 70,

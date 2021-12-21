@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, ScrollView} from 'react-native';
 import Modal from 'react-native-modal';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import styles from './ComicModal.style';
+import styles from './ComicModal.styles';
 import Feather from 'react-native-vector-icons/Feather';
 
 export default function ComicModal({selectedComic, onModalClose}) {
