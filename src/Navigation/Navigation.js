@@ -5,6 +5,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Comics from '../Pages/Comics';
 import Character from '../Pages/Character';
 import Favorites from '../Pages/Favorites';
+import Settings from '../Pages/Settings';
 import routes from './routes';
 
 const Tab = createBottomTabNavigator();
@@ -16,6 +17,7 @@ const Navigation = () => {
         <Tab.Screen name={routes.COMICS_PAGE} component={Comics} />
         <Tab.Screen name={routes.CHARACTER_PAGE} component={Character} />
         <Tab.Screen name={routes.FAVORITES_PAGE} component={Favorites} />
+        <Tab.Screen name={routes.SETTINGS_PAGE} component={Settings} />
       </Tab.Navigator>
     </NavigationContainer>
   );

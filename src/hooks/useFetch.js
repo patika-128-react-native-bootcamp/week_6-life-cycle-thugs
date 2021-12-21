@@ -1,4 +1,4 @@
-import   {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import axios from 'axios';
 
 const URL = 'https://gateway.marvel.com/v1/public/';
@@ -13,7 +13,7 @@ const useFetch = url => {
   const fetchData = async () => {
     try {
       const response = await axios.get(`${URL}${url}${KEY}`);
-      setData(response.data);
+      setData(response.data.data.results);
     } catch (error) {
       setError(error);
     } finally {
