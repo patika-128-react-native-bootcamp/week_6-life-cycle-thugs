@@ -4,23 +4,21 @@ import styles from './ComicsCard.styles';
 import Icon from 'react-native-vector-icons/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';
 import colors from '../../styles/colors';
-import {FavoritesContext} from '../../Context/FavoritesProvider';
+import {FavoritesContext} from '../../Context/FavoritesContext/FavoritesProvider';
 
 const size = '/detail.jpg';
 
 export default function ComicsCard({comics, onSelect}) {
   const {title, thumbnail} = comics;
-
   const {dispatch} = useContext(FavoritesContext);
 
-  const handleAddFavorites = comic => {
+  const handleAddFavorites = comic =>
     dispatch({
       type: 'ADD_TO_FAVORITES',
       payload: {
         comic,
       },
     });
-  };
 
   return (
     <TouchableOpacity onPress={onSelect}>

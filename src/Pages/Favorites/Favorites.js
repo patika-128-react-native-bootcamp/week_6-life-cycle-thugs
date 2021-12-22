@@ -1,8 +1,7 @@
 import React, {useContext} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity, FlatList} from 'react-native';
-import {FavoritesContext} from '../../Context/FavoritesProvider';
+import {FavoritesContext} from '../../Context/FavoritesContext/FavoritesProvider';
 import Icon from 'react-native-vector-icons/Ionicons';
-
 export default function Favorites() {
   const {state, dispatch} = useContext(FavoritesContext);
 
