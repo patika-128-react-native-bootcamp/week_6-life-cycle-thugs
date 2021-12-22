@@ -5,7 +5,6 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import Character from '../Pages/Character';
 import CharacterDetail from '../Pages/CharacterDetail/CharacterDetail';
-
 import Comics from '../Pages/Comics';
 import Favorites from '../Pages/Favorites';
 import Settings from '../Pages/Settings';
