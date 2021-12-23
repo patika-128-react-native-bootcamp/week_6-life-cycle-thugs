@@ -7,12 +7,14 @@ import Feather from 'react-native-vector-icons/Feather';
 
 export default function ComicModal({selectedComic, onModalClose}) {
   const isModalVisible = !!selectedComic;
+  const handleModalClose = () => onModalClose(null);
 
   return (
     <Modal
       style={styles.modal}
       swipeDirection="down"
-      onSwipeComplete={() => onModalClose(null)}
+      onSwipeComplete={handleModalClose}
+      onBackdropPress={handleModalClose}
       isVisible={isModalVisible}>
       <View style={styles.container}>
         <View style={styles.body_container}>

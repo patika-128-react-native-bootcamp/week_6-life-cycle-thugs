@@ -14,6 +14,8 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     borderRadius: 10,
     overflow: 'hidden',
+    borderWidth: 0.2,
+    borderColor: colors.tomato,
   },
   title: {
     fontSize: 13,

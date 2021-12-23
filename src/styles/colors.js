@@ -22,4 +22,5 @@ export default {
   button: '#FFDCDD',
   text: '#FFFFFF',
   star: '#FFDCDD',
+  tomato: 'tomato',
 };

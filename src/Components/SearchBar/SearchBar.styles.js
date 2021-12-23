@@ -8,7 +8,9 @@ export default StyleSheet.create({
   container: {
     borderRadius: radius.smooth,
     margin: spacing.medium,
-    backgroundColor: colors.secondary,
+
+    borderWidth: 0.8,
+    borderColor: colors.tomato,
   },
   input: {
     padding: spacing.medium,

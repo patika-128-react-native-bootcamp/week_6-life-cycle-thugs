@@ -6,7 +6,11 @@ const SearchBar = ({title, onChange}) => {
   return (
     <View>
       <View style={styles.container}>
-        <TextInput placeholder={title} onChangeText={onChange} />
+        <TextInput
+          placeholder={title}
+          onChangeText={onChange}
+          placeholderTextColor="gray"
+        />
       </View>
     </View>
   );

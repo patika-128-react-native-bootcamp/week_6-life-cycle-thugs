@@ -1,12 +1,23 @@
-import React, {useContext} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, FlatList} from 'react-native';
+import React, {useContext, useEffect, useState} from 'react';
+import {View, Text, TouchableOpacity, FlatList} from 'react-native';
 import {FavoritesContext} from '../../Context/FavoritesContext/FavoritesProvider';
 import Icon from 'react-native-vector-icons/Ionicons';
+import styles from './Favorites.styles';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 export default function Favorites() {
   const {state, dispatch} = useContext(FavoritesContext);
+  const [favoriteList, setFavoriteList] = useState();
 
-  const handleRemoveFavorites = comic =>
-    dispatch({type: 'REMOVE_FROM_FAVORITES', payload: {comic}});
+  const handleRemoveFavorites = favorite =>
+    dispatch({type: 'REMOVE_FROM_FAVORITES', payload: {favorite}});
+
+  useEffect(() => {
+    AsyncStorage.getItem('@fav').then(item => {
+      item && setFavoriteList(JSON.parse(item));
+      console.log(item);
+    });
+  }, [state]);
 
   const renderBooks = ({item}) => {
     return (
@@ -21,24 +32,7 @@ export default function Favorites() {
 
   return (
     <View style={styles.container}>
-      <Text>Favorites</Text>
-      <FlatList data={state.favoritesList} renderItem={renderBooks} />
+      <FlatList data={favoriteList} renderItem={renderBooks} />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {flex: 1},
-  book_container: {
-    backgroundColor: 'rgba(50, 50, 50,0.19)',
-    padding: 20,
-    borderRadius: 10,
-    margin: 10,
-    flexDirection: 'row',
-  },
-  item_name: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: 'black',
-  },
-});

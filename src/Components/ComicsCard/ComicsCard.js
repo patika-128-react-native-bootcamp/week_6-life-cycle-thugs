@@ -12,11 +12,11 @@ export default function ComicsCard({comics, onSelect}) {
   const {title, thumbnail} = comics;
   const {dispatch} = useContext(FavoritesContext);
 
-  const handleAddFavorites = comic =>
+  const handleAddFavorites = favorite =>
     dispatch({
       type: 'ADD_TO_FAVORITES',
       payload: {
-        comic,
+        favorite,
       },
     });
 
