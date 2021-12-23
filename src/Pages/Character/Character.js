@@ -7,6 +7,7 @@ import styles from './Character.styles';
 import SearchBar from '../../Components/SearchBar';
 import CharacterCard from '../../Components/CharacterCard';
 import routes from '../../Navigation/routes';
+import Loading from '../../Components/Loading/Loading';
 
 const Character = () => {
   const navigation = useNavigation();
@@ -18,6 +19,10 @@ const Character = () => {
       setCharactersData(data);
     }
   }, [data]);
+  
+  if (loading) {
+    return <Loading />;
+  }
 
   const handleCharacterDetail = id => {
     navigation.navigate(routes.CHARACTER_DETAIL_PAGE, {id});
