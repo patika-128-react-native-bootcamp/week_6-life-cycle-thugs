@@ -15,6 +15,10 @@ import Settings from '../Pages/Settings';
 import routes from './routes';
 import colors from '../styles/colors';
 import {useColorScheme} from 'react-native';
+import Comic from 'react-native-vector-icons/FontAwesome5';
+import Spider from 'react-native-vector-icons//FontAwesome5';
+import Favorite from 'react-native-vector-icons//Ionicons';
+import Setting from 'react-native-vector-icons//Ionicons';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -41,14 +45,43 @@ const Navigation = () => {
           tabBarActiveTintColor: colors.tomato,
           headerTintColor: colors.tomato,
         }}>
-        <Tab.Screen name={routes.COMICS_PAGE} component={Comics} />
         <Tab.Screen
-          options={{headerShown: false}}
+          name={routes.COMICS_PAGE}
+          component={Comics}
+          options={{
+            tabBarIcon: ({color}) => (
+              <Comic name="book-open" color={color} size={20} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          options={{
+            headerShown: false,
+            tabBarIcon: ({color}) => (
+              <Spider name="spider" color={color} size={20} />
+            ),
+          }}
           name={routes.CHARACTER_PAGE}
           component={DetailStack}
         />
-        <Tab.Screen name={routes.FAVORITES_PAGE} component={Favorites} />
-        <Tab.Screen name={routes.SETTINGS_PAGE} component={Settings} />
+        <Tab.Screen
+          name={routes.FAVORITES_PAGE}
+          component={Favorites}
+          options={{
+            tabBarIcon: ({color}) => (
+              <Favorite name="md-heart-circle" color={color} size={28} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name={routes.SETTINGS_PAGE}
+          component={Settings}
+          options={{
+            tabBarIcon: ({color}) => (
+              <Setting name="ios-settings-sharp" color={color} size={28} />
+            ),
+          }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
