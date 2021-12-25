@@ -11,9 +11,10 @@ i18n.use(initReactI18next).init({
     sp: spanish,
   },
   lng: 'en',
-  react: {
-    useSuspense: false,
+  interpolation: {
+    escapeValue: false, // react already safes from xss
   },
+  compatibilityJSON: 'v3',
 });
 
 export default i18n;
