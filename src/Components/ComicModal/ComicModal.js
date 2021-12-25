@@ -22,10 +22,10 @@ export default function ComicModal({selectedComic, onModalClose}) {
             <Text style={styles.title}>Characters:</Text>
             <ScrollView horizontal={true}>
               {selectedComic?.characters?.available > 0 &&
-                selectedComic?.characters?.items?.map((character, index) => {
+                selectedComic?.characters?.items?.map((character, i) => {
                   const {name} = character;
                   return (
-                    <View style={styles.detail_container}>
+                    <View key={i} style={styles.detail_container}>
                       <View style={styles.character_creator_container}>
                         <AntDesign name="dingding-o" size={20} color="gold" />
                       </View>
@@ -39,10 +39,10 @@ export default function ComicModal({selectedComic, onModalClose}) {
             <Text style={styles.title}>Creators: </Text>
             <ScrollView horizontal={true}>
               {selectedComic?.creators?.available > 0 &&
-                selectedComic?.creators?.items?.map((character, index) => {
+                selectedComic?.creators?.items?.map((character, i) => {
                   const {name, role} = character;
                   return (
-                    <View style={styles.detail_container}>
+                    <View key={i} style={styles.detail_container}>
                       <View style={styles.character_creator_container}>
                         <Feather name="pen-tool" size={20} color="gold" />
                       </View>
