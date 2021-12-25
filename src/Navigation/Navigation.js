@@ -5,10 +5,6 @@ import {
   DefaultTheme,
 } from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {createStackNavigator} from '@react-navigation/stack';
-
-import Character from '../Pages/Character';
-import CharacterDetail from '../Pages/CharacterDetail/CharacterDetail';
 import Comics from '../Pages/Comics';
 import Favorites from '../Pages/Favorites';
 import Settings from '../Pages/Settings';
@@ -19,23 +15,14 @@ import Comic from 'react-native-vector-icons/FontAwesome5';
 import Spider from 'react-native-vector-icons//FontAwesome5';
 import Favorite from 'react-native-vector-icons//Ionicons';
 import Setting from 'react-native-vector-icons//Ionicons';
+import DetailStack from './DetailStack';
+import {useTranslation} from 'react-i18next';
 
 const Tab = createBottomTabNavigator();
-const Stack = createStackNavigator();
-
-const DetailStack = () => {
-  return (
-    <Stack.Navigator screenOptions={{headerTintColor: colors.tomato}}>
-      <Stack.Screen name={routes.CHARACTER_PAGE} component={Character} />
-      <Stack.Screen
-        name={routes.CHARACTER_DETAIL_PAGE}
-        component={CharacterDetail}
-      />
-    </Stack.Navigator>
-  );
-};
 
 const Navigation = () => {
+  const {t} = useTranslation();
+
   const scheme = useColorScheme();
   return (
     <NavigationContainer theme={scheme === 'dark' ? DarkTheme : DefaultTheme}>
@@ -61,7 +48,7 @@ const Navigation = () => {
               <Spider name="spider" color={color} size={20} />
             ),
           }}
-          name={routes.CHARACTER_PAGE}
+          name={routes.CHARACTER_STACK}
           component={DetailStack}
         />
         <Tab.Screen
@@ -74,7 +61,7 @@ const Navigation = () => {
           }}
         />
         <Tab.Screen
-          name={routes.SETTINGS_PAGE}
+          name={t(routes.SETTINGS_PAGE)}
           component={Settings}
           options={{
             tabBarIcon: ({color}) => (
