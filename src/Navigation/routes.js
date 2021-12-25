@@ -4,4 +4,5 @@ export default {
   CHARACTER_DETAIL_PAGE: 'Character Detail',
   FAVORITES_PAGE: 'Favorites',
   SETTINGS_PAGE: 'Settings',
+  CHARACTER_STACK: 'Characters',
 };

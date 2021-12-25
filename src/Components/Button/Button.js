@@ -1,14 +1,20 @@
 import React from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
 import styles from './Button.styles';
+import AwesomeButton from 'react-native-really-awesome-button/src/themes/rick';
+import colors from '../../styles/colors';
 
 const Button = ({title, onPress}) => {
   return (
-    <View style={styles.container}>
-      <TouchableOpacity onPress={onPress} style={styles.btncontainer}>
-        <Text style={styles.title}>{title}</Text>
-      </TouchableOpacity>
-    </View>
+    <AwesomeButton
+      type="anchor"
+      style={styles.container}
+      textColor={colors.white}
+      backgroundDarker={colors.dark_Charcoal}
+      backgroundColor={colors.dark_coral}
+      borderColor={colors.granite_Gray}
+      onPress={onPress}>
+      {title}
+    </AwesomeButton>
   );
 };
 export default Button;

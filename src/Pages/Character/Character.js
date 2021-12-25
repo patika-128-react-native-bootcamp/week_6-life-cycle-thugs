@@ -19,7 +19,7 @@ const Character = () => {
       setCharactersData(data);
     }
   }, [data]);
-  
+
   if (loading) {
     return <Loading />;
   }
