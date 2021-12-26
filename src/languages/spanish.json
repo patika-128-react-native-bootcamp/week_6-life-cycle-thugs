@@ -2,6 +2,12 @@
   "translation": {
     "Settings": "Ajustes",
     "LanguageSettings": "Opciones de lenguaje",
-    "Comics": "Comssss"
+    "Comics": "Libro cómico",
+    "Character": "Caracteres",
+    "Characters": "Caracteres",
+    "Favorites": "Favoritos",
+    "CharacterDetail": "Detalle del personaje",
+    "Series": "Serie",
+    "DetailUrls": "URL detalladas"
   }
 }

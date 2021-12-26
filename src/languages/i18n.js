@@ -11,8 +11,8 @@ i18n.use(initReactI18next).init({
     sp: spanish,
   },
   lng: 'en',
-  interpolation: {
-    escapeValue: false, // react already safes from xss
+  react: {
+    useSuspense: false, // react already safes from xss
   },
   compatibilityJSON: 'v3',
 });

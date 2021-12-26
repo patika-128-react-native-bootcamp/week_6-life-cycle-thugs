@@ -2,6 +2,7 @@ import React from 'react';
 import {Text, View} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import SwitchSelector from 'react-native-switch-selector';
+import styles from '../../Pages/Settings/Settings.styles';
 
 const options = [
   {label: 'English', value: 'en'},
@@ -11,8 +12,8 @@ const options = [
 const Settings = () => {
   const {t, i18n} = useTranslation();
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>{t('LanguageSettings')}</Text>
+    <View>
+      <Text style={styles.name}>{t('LanguageSettings')}</Text>
       <SwitchSelector
         options={options}
         hasPadding

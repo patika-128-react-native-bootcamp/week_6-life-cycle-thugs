@@ -2,6 +2,12 @@
   "translation": {
     "Settings": "Ayarlar",
     "LanguageSettings": "Dil Ayarları",
-    "Comics": "Comicsasdcfv"
+    "Comics": "Çizgi Roman",
+    "Character": "Karakter",
+    "Characters": "Karakterler",
+    "Favorites": "Favoriler",
+    "CharacterDetail": "Karakter Detayı",
+    "Series": "Seriler",
+    "DetailUrls": "Detay Url'leri"
   }
 }
