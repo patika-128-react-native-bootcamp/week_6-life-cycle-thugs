@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import {Text, View, SafeAreaView, FlatList} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
@@ -8,11 +8,13 @@ import SearchBar from '../../Components/SearchBar';
 import CharacterCard from '../../Components/CharacterCard';
 import routes from '../../Navigation/routes';
 import Loading from '../../Components/Loading/Loading';
+import {FavoritesContext} from '../../Context/FavoritesContext/FavoritesProvider';
 
 const Character = () => {
   const navigation = useNavigation();
   const {loading, error, data} = useFetch('characters');
   const [charactersData, setCharactersData] = useState([]);
+  const {dispatch} = useContext(FavoritesContext);
 
   useEffect(() => {
     if (data !== null) {
@@ -24,6 +26,14 @@ const Character = () => {
     return <Loading />;
   }
 
+  const handleAddFavorites = favorite =>
+    dispatch({
+      type: 'ADD_TO_FAVORITES',
+      payload: {
+        favorite,
+      },
+    });
+
   const handleCharacterDetail = id => {
     navigation.navigate(routes.CHARACTER_DETAIL_PAGE, {id});
   };
@@ -32,6 +42,7 @@ const Character = () => {
     <CharacterCard
       characters={item}
       onSelect={() => handleCharacterDetail(item.id)}
+      onPress={() => handleAddFavorites(item)}
     />
   );
 
@@ -49,7 +60,7 @@ const Character = () => {
   };
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <SearchBar title="Search.." onChange={handleChangeText} />
       <FlatList
         data={charactersData}

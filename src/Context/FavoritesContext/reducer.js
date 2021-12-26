@@ -33,6 +33,9 @@ export default (state, action) => {
       AsyncStorage.setItem('@fav', JSON.stringify(updatedFavoritesList));
       return {...state, favoritesList: updatedFavoritesList};
     }
+    case 'SET_DATA':
+      const fav = action.payload;
+      return {...state, favoritesList: fav};
 
     default:
       return state;

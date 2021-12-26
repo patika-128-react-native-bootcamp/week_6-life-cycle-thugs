@@ -22,5 +22,6 @@ export default {
   button: '#FFDCDD',
   text: '#FFFFFF',
   star: '#FFDCDD',
-  tomato: 'tomato',
+  tomato: '#ff6347',
+  dark_coral: '#c64d37',
 };
