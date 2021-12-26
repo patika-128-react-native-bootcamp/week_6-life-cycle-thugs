@@ -6,7 +6,7 @@ export default (state, action) => {
       const selectedItem = action.payload.favorite;
 
       const currentFavoriteList = state.favoritesList.findIndex(
-        item => item === selectedItem,
+        item => item.id === selectedItem.id,
       );
       const isInFavorites = currentFavoriteList !== -1;
 
@@ -24,7 +24,7 @@ export default (state, action) => {
       const selectedItem = action.payload.favorite;
 
       const currentFavoriteList = state.favoritesList.findIndex(
-        item => item === selectedItem,
+        item => item.id === selectedItem.id,
       );
 
       const updatedFavoritesList = [...state.favoritesList];

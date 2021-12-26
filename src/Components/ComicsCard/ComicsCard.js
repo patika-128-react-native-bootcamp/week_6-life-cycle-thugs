@@ -1,13 +1,5 @@
-import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  ImageBackground,
-  TouchableOpacity,
-  Image,
-  TouchableNativeFeedback,
-  TouchableWithoutFeedback,
-} from 'react-native';
+import React from 'react';
+import {View, Text, ImageBackground, TouchableOpacity} from 'react-native';
 import styles from './ComicsCard.styles';
 import Icon from 'react-native-vector-icons/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';

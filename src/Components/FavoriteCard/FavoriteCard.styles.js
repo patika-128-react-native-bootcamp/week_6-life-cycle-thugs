@@ -1,26 +1,29 @@
 import {StyleSheet, Dimensions} from 'react-native';
 import colors from '../../styles/colors';
 
-const {width} = Dimensions.get('window');
-
-const SPACING = 10;
+const {height} = Dimensions.get('window');
 
 const styles = StyleSheet.create({
+  container: {
+    justifyContent: 'center',
+    flex: 1,
+  },
   image: {
-    height: 250,
-    width: width / 2 - SPACING * 2,
+    height: height / 1.7,
     resizeMode: 'cover',
-    margin: SPACING,
+    margin: 10,
     justifyContent: 'flex-end',
     borderRadius: 10,
     overflow: 'hidden',
-    borderWidth: 0.2,
-    borderColor: colors.tomato,
+    borderLeftWidth: 7,
+    borderColor: colors.chinese_Black,
+    borderBottomWidth: 7,
   },
   title: {
-    fontSize: 13,
+    fontSize: 22,
     fontWeight: 'bold',
-    color: colors.white,
+    color: colors.black,
+    textAlign: 'center',
   },
   button: {
     right: 10,
@@ -42,7 +45,7 @@ const styles = StyleSheet.create({
     top: 0,
   },
   linear: {
-    padding: 10,
+    padding: 5,
   },
 });
 export default styles;

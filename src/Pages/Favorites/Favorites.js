@@ -1,16 +1,10 @@
 import React, {useContext} from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  FlatList,
-  Image,
-  ScrollView,
-} from 'react-native';
+import {View, Dimensions} from 'react-native';
 import {FavoritesContext} from '../../Context/FavoritesContext/FavoritesProvider';
-import Icon from 'react-native-vector-icons/Ionicons';
 import styles from './Favorites.styles';
 import FavoriteCard from '../../Components/FavoriteCard';
+import Carousel from 'react-native-snap-carousel';
+const {width} = Dimensions.get('window');
 
 export default function Favorites() {
   const {state, dispatch} = useContext(FavoritesContext);
@@ -22,7 +16,7 @@ export default function Favorites() {
   const renderFavorites = ({item}) => {
     return (
       <FavoriteCard
-        comics={item}
+        favoriteData={item}
         onSelect={() => handleRemoveFavorites(item)}
       />
     );
@@ -30,10 +24,11 @@ export default function Favorites() {
 
   return (
     <View style={styles.container}>
-      <FlatList
+      <Carousel
         data={favoritesList}
         renderItem={renderFavorites}
-        numColumns={2}
+        sliderWidth={350}
+        itemWidth={width * 0.7}
       />
     </View>
   );
