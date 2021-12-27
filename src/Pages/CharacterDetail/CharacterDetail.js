@@ -37,8 +37,8 @@ const CharacterDetail = () => {
               <Text style={styles.card_text}>{t('Comics')}</Text>
               <ScrollView horizontal>
                 {characters?.comics?.available > 0 &&
-                  characters.comics.items.map(comic => (
-                    <DetailCard comics={comic} />
+                  characters.comics.items.map((comic, index) => (
+                    <DetailCard comics={comic} key={index} />
                   ))}
               </ScrollView>
             </View>
@@ -47,8 +47,8 @@ const CharacterDetail = () => {
               <Text style={styles.card_text}>{t('Series')}</Text>
               <ScrollView horizontal>
                 {characters?.series?.available > 0 &&
-                  characters.series.items.map(comic => (
-                    <DetailCard comics={comic} />
+                  characters.series.items.map((comic, index) => (
+                    <DetailCard comics={comic} key={index} />
                   ))}
               </ScrollView>
             </View>
@@ -56,8 +56,9 @@ const CharacterDetail = () => {
               <Text style={styles.card_text}>{t('DetailUrls')}</Text>
               <ScrollView horizontal pagingEnabled>
                 {characters?.urls &&
-                  characters.urls.map(url => (
+                  characters.urls.map((url, index) => (
                     <Button
+                      key={index}
                       title={'Character ' + url.type}
                       onPress={() => openLink(url.url)}
                     />

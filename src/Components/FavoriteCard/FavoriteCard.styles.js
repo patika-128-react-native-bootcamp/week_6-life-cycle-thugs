@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     borderRadius: spacing.large,
     overflow: 'hidden',
     borderLeftWidth: 7,
-    borderColor: colors.chinese_Black,
+    borderColor: '#66261a',
     borderBottomWidth: 7,
   },
   title: {
