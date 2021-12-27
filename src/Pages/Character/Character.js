@@ -9,13 +9,14 @@ import CharacterCard from '../../Components/CharacterCard';
 import routes from '../../Navigation/routes';
 import Loading from '../../Components/Loading/Loading';
 import {FavoritesContext} from '../../Context/FavoritesContext/FavoritesProvider';
-
+import {ThemeContext} from '../../Context/ThemeContext/ThemeProvider';
+import dark from '../../themes/dark';
 const Character = () => {
   const navigation = useNavigation();
   const {loading, error, data} = useFetch('characters');
   const [charactersData, setCharactersData] = useState([]);
   const {dispatch} = useContext(FavoritesContext);
-
+  const {theme} = useContext(ThemeContext);
   useEffect(() => {
     if (data !== null) {
       setCharactersData(data);
@@ -60,7 +61,7 @@ const Character = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={theme == 'dark' ? dark.container : styles.container}>
       <SearchBar title="Search.." onChange={handleChangeText} />
       <FlatList
         data={charactersData}

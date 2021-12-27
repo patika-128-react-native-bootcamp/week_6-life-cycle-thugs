@@ -1,38 +1,20 @@
 import React, {createContext, useReducer, useEffect, useState} from 'react';
+import {Appearance} from 'react-native';
 import reducer from './reducer';
 import store from './store';
 
 export const ThemeContext = createContext();
 
 export default function ThemeProvider({children}) {
-  const [state, dispatch] = useReducer(reducer, store);
-  const colorScheme = useColorScheme();
+  const [theme, setTheme] = useState(Appearance.getColorScheme());
 
-  const [themeState, setThemeState] = useState(defaultMode);
-  const setMode = mode => {
-    setThemeState(mode);
-  };
   useEffect(() => {
-    const subscription = Appearance.addChangeListener(({colorScheme}) => {
-      setThemeState(colorScheme);
+    Appearance.addChangeListener(scheme => {
+      setTheme(scheme.colorScheme);
     });
-    return () => subscription.remove();
-  }, []);
+  }, [theme]);
 
-  useEffect(() => {
-    themeState.darkMode = colorScheme;
-  }, [colorScheme]);
   return (
-    <ThemeContext.Provider value={{mode: themeState, setMode}}>
-      <ThemeProvider
-        theme={themeState === 'dark' ? darkTheme.theme : lightTheme.theme}>
-        <>
-          <StatusBar
-            barStyle={themeState === 'dark' ? 'dark-content' : 'light-content'}
-          />
-          {children}
-        </>
-      </ThemeProvider>
-    </ThemeContext.Provider>
+    <ThemeContext.Provider value={{theme}}>{children}</ThemeContext.Provider>
   );
 }

@@ -1,5 +1,5 @@
 import {useRoute} from '@react-navigation/native';
-import React from 'react';
+import React, {useContext} from 'react';
 import {Text, View, ScrollView, Image, Linking} from 'react-native';
 import {useTranslation} from 'react-i18next';
 
@@ -7,19 +7,21 @@ import styles from './CharacterDetail.styles';
 import useFetch from '../../hooks/useFetch';
 import Button from '../../Components/Button/Button';
 import DetailCard from '../../Components/DetailCard';
+import {ThemeContext} from '../../Context/ThemeContext/ThemeProvider';
+import dark from '../../themes/dark';
 
 const CharacterDetail = () => {
   const route = useRoute();
   const {id} = route.params;
   const {data} = useFetch(`characters/${id}`);
   const {t, i18n} = useTranslation();
-
+  const {theme} = useContext(ThemeContext);
   async function openLink(url) {
     await Linking.openURL(url);
   }
 
   return (
-    <ScrollView>
+    <ScrollView style={theme == 'dark' ? dark.container : styles.container}>
       <View style={styles.animated_header_component}>
         <Image
           style={styles.image}
