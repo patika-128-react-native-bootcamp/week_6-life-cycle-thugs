@@ -22,7 +22,6 @@ const DetailStack = () => {
       <Stack.Screen
         name={t(routes.CHARACTER_DETAIL_PAGE)}
         component={CharacterDetail}
-        options={{headerShown: false}}
       />
     </Stack.Navigator>
   );

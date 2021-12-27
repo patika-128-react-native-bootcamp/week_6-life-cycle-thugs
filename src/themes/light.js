@@ -1,10 +1,10 @@
-const light = {
-  theme: {
+import {StyleSheet} from 'react-native';
+
+const light = StyleSheet.create({
+  container: {
     background: '#ededed',
-    border: '#bdbdbd',
-    backgroundAlt: '#eaeaeb',
-    borderAlt: '#bdbdbd',
-    text: '#171717',
+    flex: 1,
   },
-};
+});
+
 export default light;
