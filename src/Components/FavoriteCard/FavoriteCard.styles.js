@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 22,
     fontWeight: 'bold',
-    color: colors.black,
+    color: colors.tomato,
     textAlign: 'center',
   },
   button: {

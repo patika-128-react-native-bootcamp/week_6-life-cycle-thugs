@@ -1,5 +1,9 @@
 import React, {useContext} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import {
+  NavigationContainer,
+  DefaultTheme,
+  DarkTheme,
+} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Comics from '../Pages/Comics';
 import Favorites from '../Pages/Favorites';
@@ -16,7 +20,6 @@ import Setting from 'react-native-vector-icons//Ionicons';
 import DetailStack from './DetailStack';
 import {ThemeContext} from '../Context/ThemeContext/ThemeProvider';
 import dark from '../themes/dark';
-import light from '../themes/light';
 
 const Tab = createBottomTabNavigator();
 
@@ -24,8 +27,7 @@ const Navigation = () => {
   const {t} = useTranslation();
   const {theme} = useContext(ThemeContext);
   return (
-    <NavigationContainer
-      style={theme == 'dark' ? dark.container : light.container}>
+    <NavigationContainer theme={theme === 'dark' ? DarkTheme : DefaultTheme}>
       <Tab.Navigator
         screenOptions={{
           tabBarInactiveTintColor: colors.granite_Gray,
