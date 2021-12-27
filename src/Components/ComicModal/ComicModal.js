@@ -31,7 +31,10 @@ export default function ComicModal({selectedComic, onModalClose}) {
               selectedComic?.textObjects.map(description => {
                 const {text} = description;
                 return (
-                  <Text style={styles.description} numberOfLines={4}>
+                  <Text
+                    key={selectedComic.id}
+                    style={styles.description}
+                    numberOfLines={4}>
                     {text}
                   </Text>
                 );
@@ -41,11 +44,11 @@ export default function ComicModal({selectedComic, onModalClose}) {
           <View style={styles.bottom_container}>
             <ScrollView horizontal={true}>
               {selectedComic?.characters?.available > 0 &&
-                selectedComic?.characters?.items?.map((character, i) => {
+                selectedComic?.characters?.items?.map((character, index) => {
                   const {name} = character;
                   <Text style={styles.title}>{t('Characters')}</Text>;
                   return (
-                    <View key={i} style={styles.detail_container}>
+                    <View key={index} style={styles.detail_container}>
                       <View style={styles.character_creator_container}>
                         <FontAwesome name="spider" size={20} color="gold" />
                       </View>
@@ -60,10 +63,10 @@ export default function ComicModal({selectedComic, onModalClose}) {
           <View style={styles.bottom_container}>
             <ScrollView horizontal={true}>
               {selectedComic?.creators?.available > 0 &&
-                selectedComic?.creators?.items?.map((character, i) => {
+                selectedComic?.creators?.items?.map((character, index) => {
                   const {name, role} = character;
                   return (
-                    <View key={i} style={styles.detail_container}>
+                    <View key={index} style={styles.detail_container}>
                       <View style={styles.character_creator_container}>
                         <Feather name="pen-tool" size={20} color="gold" />
                       </View>
@@ -81,8 +84,9 @@ export default function ComicModal({selectedComic, onModalClose}) {
           <View style={styles.card_container}>
             <ScrollView horizontal pagingEnabled>
               {selectedComic?.urls &&
-                selectedComic.urls.map(url => (
+                selectedComic.urls.map((url, index) => (
                   <Button
+                    key={index}
                     title={'Comics ' + url.type}
                     onPress={() => openLink(url.url)}
                   />

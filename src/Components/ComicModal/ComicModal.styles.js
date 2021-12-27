@@ -1,73 +1,76 @@
 import {Dimensions, StyleSheet} from 'react-native';
 import colors from '../../styles/colors';
+import font from '../../styles/font';
+import radius from '../../styles/radius';
+import spacing from '../../styles/spacing';
 const {height} = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   modal: {
-    padding: 0,
-    margin: 0,
+    padding: spacing.zero,
+    margin: spacing.zero,
   },
   container: {
     flex: 1,
     justifyContent: 'flex-end',
   },
   body_container: {
-    padding: 5,
+    padding: spacing.small,
     backgroundColor: 'rgba(50, 50, 50,0.92)',
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
+    borderTopLeftRadius: radius.smooth,
+    borderTopRightRadius: radius.smooth,
     height: height / 1.4,
   },
   detail_container: {
     width: 80,
     alignItems: 'center',
-    margin: 3,
+    margin: spacing.tiny,
   },
   character_creator_container: {
     height: 70,
     width: 70,
-    borderRadius: 25,
+    borderRadius: radius.icon_card,
     borderWidth: StyleSheet.hairlineWidth,
     borderColor: colors.gold,
     backgroundColor: '#1f1f1f',
     justifyContent: 'center',
     alignItems: 'center',
-    margin: 5,
+    margin: spacing.small,
   },
   title: {
-    fontSize: 13,
+    fontSize: font.subtitle,
     color: colors.white,
     textAlign: 'center',
   },
   bottom_container: {
     flexDirection: 'row',
-    paddingTop: 5,
-    margin: 5,
+    paddingTop: spacing.small,
+    margin: spacing.small,
   },
   comic_name: {
-    fontSize: 22,
+    fontSize: font.main_title,
     color: colors.white,
     textAlign: 'center',
   },
   indentation: {
-    fontSize: 30,
+    fontSize: font.indentation,
     color: colors.granite_Gray,
     textAlign: 'center',
-    bottom: 25,
+    bottom: spacing.huge,
     fontWeight: 'bold',
   },
   card_container: {
-    top: 10,
-    left: 10,
+    top: spacing.large,
+    left: spacing.large,
   },
   role: {
-    fontSize: 11,
+    fontSize: font.description_title,
     color: colors.granite_Gray,
     textAlign: 'center',
     fontWeight: 'bold',
   },
   description: {
-    fontSize: 11,
+    fontSize: font.description_title,
     textAlign: 'justify',
   },
 });

@@ -1,18 +1,21 @@
 import {StyleSheet} from 'react-native';
 import colors from '../../styles/colors';
+import font from '../../styles/font';
+import spacing from '../../styles/spacing';
+
 const styles = StyleSheet.create({
   container: {flex: 1, margin: 10},
   favorites_container: {
-    margin: 10,
+    margin: spacing.large,
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
   },
   name: {
-    fontSize: 18,
+    fontSize: font.header,
     fontWeight: 'bold',
     color: colors.tomato,
-    margin: 5,
+    margin: spacing.small,
     textAlign: 'justify',
   },
   icon: {

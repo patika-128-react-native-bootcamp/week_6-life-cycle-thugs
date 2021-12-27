@@ -1,12 +1,14 @@
 import {StyleSheet} from 'react-native';
 
 import colors from '../../styles/colors';
+import font from '../../styles/font';
+import spacing from '../../styles/spacing';
 
 const styles = StyleSheet.create({
   animated_header_component: {
     position: 'absolute',
-    left: 0,
-    right: 0,
+    left: spacing.zero,
+    right: spacing.zero,
   },
   image: {
     height: 300,
@@ -14,11 +16,11 @@ const styles = StyleSheet.create({
 
   movieCard_container: {
     paddingTop: 150,
-    left: 10,
+    left: spacing.large,
   },
 
   name: {
-    fontSize: 35,
+    fontSize: font.name,
     fontWeight: 'bold',
     fontStyle: 'italic',
     color: colors.white,
@@ -31,17 +33,17 @@ const styles = StyleSheet.create({
   },
 
   card_container: {
-    paddingTop: 30,
+    paddingTop: spacing.huge,
   },
   card_text: {
-    fontSize: 18,
+    fontSize: font.header,
     textDecorationLine: 'underline',
     color: colors.dark_coral,
   },
   description: {
-    paddingTop: 80,
+    paddingTop: spacing.description_spacing,
     textAlign: 'left',
-    paddingRight: 5,
+    paddingRight: spacing.tiny,
     color: colors.dark_coral,
   },
 });

@@ -1,5 +1,8 @@
 import {StyleSheet, Dimensions} from 'react-native';
 import colors from '../../styles/colors';
+import font from '../../styles/font';
+import radius from '../../styles/radius';
+import spacing from '../../styles/spacing';
 
 const {height} = Dimensions.get('window');
 
@@ -11,41 +14,41 @@ const styles = StyleSheet.create({
   image: {
     height: height / 1.7,
     resizeMode: 'cover',
-    margin: 10,
+    margin: spacing.large,
     justifyContent: 'flex-end',
-    borderRadius: 10,
+    borderRadius: spacing.large,
     overflow: 'hidden',
     borderLeftWidth: 7,
     borderColor: colors.chinese_Black,
     borderBottomWidth: 7,
   },
   title: {
-    fontSize: 22,
+    fontSize: font.main_title,
     fontWeight: 'bold',
     color: colors.black,
     textAlign: 'center',
   },
   button: {
-    right: 10,
-    top: 10,
+    right: spacing.large,
+    top: spacing.large,
     height: 40,
     width: 40,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'white',
-    borderRadius: 30,
+    borderRadius: radius.button_card,
     position: 'absolute',
   },
   image_color_container: {
     backgroundColor: '#00000022',
     position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
-    top: 0,
+    left: spacing.zero,
+    right: spacing.zero,
+    bottom: spacing.zero,
+    top: spacing.zero,
   },
   linear: {
-    padding: 5,
+    padding: spacing.small,
   },
 });
 export default styles;

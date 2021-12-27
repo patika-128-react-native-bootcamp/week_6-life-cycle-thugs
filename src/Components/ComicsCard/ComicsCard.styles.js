@@ -1,48 +1,48 @@
 import {StyleSheet, Dimensions} from 'react-native';
 import colors from '../../styles/colors';
+import font from '../../styles/font';
+import radius from '../../styles/radius';
+import spacing from '../../styles/spacing';
 
 const {width} = Dimensions.get('window');
-
-const SPACING = 10;
-
 const styles = StyleSheet.create({
   image: {
     height: 250,
-    width: width / 2 - SPACING * 2,
+    width: width / 2 - spacing.large * 2,
     resizeMode: 'cover',
-    margin: SPACING,
+    margin: spacing.large,
     justifyContent: 'flex-end',
-    borderRadius: 10,
+    borderRadius: radius.soft,
     overflow: 'hidden',
     borderWidth: 0.2,
     borderColor: colors.tomato,
   },
   title: {
-    fontSize: 13,
+    fontSize: font.subtitle,
     fontWeight: 'bold',
     color: colors.white,
   },
   button: {
-    right: 10,
-    top: 10,
-    height: 40,
-    width: 40,
+    right: spacing.large,
+    top: spacing.large,
+    height: spacing.giant,
+    width: spacing.giant,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'white',
-    borderRadius: 30,
+    borderRadius: radius.smooth,
     position: 'absolute',
   },
   image_color_container: {
     backgroundColor: '#00000022',
     position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
-    top: 0,
+    left: spacing.zero,
+    right: spacing.zero,
+    bottom: spacing.zero,
+    top: spacing.zero,
   },
   linear: {
-    padding: 10,
+    padding: spacing.large,
   },
 });
 export default styles;

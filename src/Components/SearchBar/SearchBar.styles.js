@@ -6,7 +6,7 @@ import spacing from '../../styles/spacing';
 
 export default StyleSheet.create({
   container: {
-    borderRadius: radius.smooth,
+    borderRadius: radius.soft,
     margin: spacing.medium,
 
     borderWidth: 0.8,

@@ -27,7 +27,7 @@ export default function Favorites() {
       <Carousel
         data={favoritesList}
         renderItem={renderFavorites}
-        sliderWidth={350}
+        sliderWidth={width}
         itemWidth={width * 0.7}
       />
     </View>

@@ -5,7 +5,7 @@ import colors from '../../styles/colors';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    borderRadius: radius.smooth,
+    borderRadius: radius.soft,
     margin: spacing.medium,
     backgroundColor: colors.secondary,
   },
