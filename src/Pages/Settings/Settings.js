@@ -2,6 +2,7 @@ import React from 'react';
 import {Text, View} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import SwitchSelector from 'react-native-switch-selector';
+
 import styles from '../../Pages/Settings/Settings.styles';
 
 const options = [

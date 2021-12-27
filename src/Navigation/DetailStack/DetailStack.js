@@ -14,7 +14,11 @@ const DetailStack = () => {
   const {t} = useTranslation();
   return (
     <Stack.Navigator screenOptions={{headerTintColor: colors.tomato}}>
-      <Stack.Screen name={t(routes.CHARACTER_PAGE)} component={Character} />
+      <Stack.Screen
+        name={t(routes.CHARACTER_PAGE)}
+        component={Character}
+        options={{headerShown: false}}
+      />
       <Stack.Screen
         name={t(routes.CHARACTER_DETAIL_PAGE)}
         component={CharacterDetail}

@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: font.main_title,
     fontWeight: 'bold',
-    color: colors.black,
+    color: colors.tomato,
     textAlign: 'center',
   },
   button: {

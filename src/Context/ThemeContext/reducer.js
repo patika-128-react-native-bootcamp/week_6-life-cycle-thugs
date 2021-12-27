@@ -1,13 +1,11 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
-export default (state, action) => {
+export default function reducer(state, action) {
   switch (action.type) {
-    case 'CHANGE_APP_THEME': {
-      console.log(action.payload.theme);
-      return {...state, theme: action.payload.theme};
-    }
-
+    case 'CHANGE_THEME':
+      return {
+        ...state,
+        theme: action.payload,
+      };
     default:
       return state;
   }
-};
+}

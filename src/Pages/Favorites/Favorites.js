@@ -1,9 +1,11 @@
 import React, {useContext} from 'react';
 import {View, Dimensions} from 'react-native';
+import Carousel from 'react-native-snap-carousel';
+
 import {FavoritesContext} from '../../Context/FavoritesContext/FavoritesProvider';
 import styles from './Favorites.styles';
 import FavoriteCard from '../../Components/FavoriteCard';
-import Carousel from 'react-native-snap-carousel';
+
 const {width} = Dimensions.get('window');
 
 export default function Favorites() {
