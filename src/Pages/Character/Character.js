@@ -1,6 +1,7 @@
 import React, {useState, useContext, useEffect} from 'react';
 import {Text, View, SafeAreaView, FlatList} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+import {useTranslation} from 'react-i18next';
 
 import useFetch from '../../hooks/useFetch';
 import styles from './Character.styles';
@@ -15,6 +16,7 @@ const Character = () => {
   const {loading, error, data} = useFetch('characters');
   const [charactersData, setCharactersData] = useState([]);
   const {dispatch} = useContext(FavoritesContext);
+  const {t} = useTranslation();
 
   useEffect(() => {
     if (data !== null) {
@@ -61,7 +63,7 @@ const Character = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <SearchBar title="Search.." onChange={handleChangeText} />
+      <SearchBar title={t('Search')} onChange={handleChangeText} />
       <FlatList
         data={charactersData}
         renderItem={renderCharacterList}
