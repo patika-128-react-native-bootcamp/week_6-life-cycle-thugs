@@ -30,7 +30,7 @@ const CharacterDetail = () => {
       </View>
       {data &&
         data.map(characters => (
-          <View style={styles.movieCard_container} key={characters.id}>
+          <View style={styles.characterCard_container} key={characters.id}>
             <Text style={styles.name}>{characters.name}</Text>
             <Text style={styles.description}>{characters.description}</Text>
             <View style={styles.card_container}>

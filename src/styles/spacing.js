@@ -2,7 +2,6 @@ export default {
   zero: 0,
   min: 2,
   tiny: 3,
-  //tiny: 5,
   small: 5,
   medium: 7,
   large: 10,

@@ -12,7 +12,7 @@ export default function DetailCard({comics}) {
   const {name} = comics;
 
   return (
-    <View style={styles.container}>
+    <View>
       <ImageBackground source={{uri: new_image}} style={styles.image}>
         <View style={styles.image_color_container} />
         <LinearGradient style={styles.linear} colors={colors.linear_colors}>

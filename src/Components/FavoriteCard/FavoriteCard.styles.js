@@ -47,8 +47,5 @@ const styles = StyleSheet.create({
     bottom: spacing.zero,
     top: spacing.zero,
   },
-  linear: {
-    padding: spacing.small,
-  },
 });
 export default styles;

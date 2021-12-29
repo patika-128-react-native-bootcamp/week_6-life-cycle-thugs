@@ -23,17 +23,6 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     color: colors.white,
   },
-  button: {
-    right: spacing.large,
-    top: spacing.large,
-    height: 40,
-    width: 40,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'white',
-    borderRadius: radius.button_card,
-    position: 'absolute',
-  },
   image_color_container: {
     backgroundColor: '#00000022',
     position: 'absolute',

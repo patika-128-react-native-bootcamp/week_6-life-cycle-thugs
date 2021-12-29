@@ -15,6 +15,7 @@ i18n.use(initReactI18next).init({
     useSuspense: false, // react already safes from xss
   },
   compatibilityJSON: 'v3',
+  fallbackLng: 'en',
 });
 
 export default i18n;

@@ -1,6 +1,6 @@
 export default function reducer(state, action) {
   switch (action.type) {
-    case 'CHANGE_THEME':
+    case 'dark':
       return {
         ...state,
         theme: action.payload,

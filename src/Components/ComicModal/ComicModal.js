@@ -1,11 +1,11 @@
 import React from 'react';
 import {View, Text, ScrollView, Linking} from 'react-native';
+import {useTranslation} from 'react-i18next';
 import Modal from 'react-native-modal';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5';
 import styles from './ComicModal.styles';
 import Feather from 'react-native-vector-icons/Feather';
 import Button from '../Button/Button';
-import {useTranslation} from 'react-i18next';
 
 export default function ComicModal({selectedComic, onModalClose}) {
   const isModalVisible = !!selectedComic;

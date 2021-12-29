@@ -4,7 +4,7 @@ import font from '../../styles/font';
 import spacing from '../../styles/spacing';
 
 const styles = StyleSheet.create({
-  container: {flex: 1, margin: 10},
+  container: {flex: 1, margin: spacing.large},
   favorites_container: {
     margin: spacing.large,
     flexDirection: 'row',

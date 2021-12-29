@@ -3,10 +3,12 @@ import {
   View,
   Text,
   Image,
-  TouchableWithoutFeedback,
+  ImageBackground,
   TouchableOpacity,
 } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import styles from './CharacterCard.styles';
+import colors from '../../styles/colors';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const new_image =
@@ -21,19 +23,19 @@ const CharacterCard = ({characters, onSelect, onPress}) => {
   const image = character_url === not_available ? new_image : character_url;
 
   return (
-    <TouchableWithoutFeedback onPress={onSelect}>
-      <View style={styles.container}>
-        <Image style={styles.image} source={{uri: image}} />
+    <TouchableOpacity onPress={onSelect}>
+      <ImageBackground source={{uri: image}} style={styles.image}>
+        <View style={styles.image_color_container} />
         <TouchableOpacity style={styles.button} onPress={onPress}>
           <Icon name="ios-heart-outline" color="#b71c1c" size={25} />
         </TouchableOpacity>
-        <View style={styles.inner_container}>
-          <Text numberOfLines={2} style={styles.text}>
+        <LinearGradient style={styles.linear} colors={colors.linear_colors}>
+          <Text style={styles.title} numberOfLines={5}>
             {characters.name}
           </Text>
-        </View>
-      </View>
-    </TouchableWithoutFeedback>
+        </LinearGradient>
+      </ImageBackground>
+    </TouchableOpacity>
   );
 };
 export default CharacterCard;

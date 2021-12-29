@@ -13,12 +13,10 @@ const styles = StyleSheet.create({
   image: {
     height: 300,
   },
-
-  movieCard_container: {
+  characterCard_container: {
     paddingTop: 150,
     left: spacing.large,
   },
-
   name: {
     fontSize: font.name,
     fontWeight: 'bold',
@@ -27,11 +25,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(50,0,0,0.2)',
     height: 50,
   },
-
   linear: {
     ...StyleSheet.absoluteFill,
   },
-
   card_container: {
     paddingTop: spacing.huge,
   },

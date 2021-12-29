@@ -22,6 +22,7 @@ const Settings = () => {
         onPress={language => {
           i18n.changeLanguage(language);
         }}
+        buttonColor="#ff6347"
       />
     </View>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './Button.styles';
 import AwesomeButton from 'react-native-really-awesome-button/src/themes/rick';
 import colors from '../../styles/colors';
+import styles from './Button.styles';
 
 const Button = ({title, onPress}) => {
   return (

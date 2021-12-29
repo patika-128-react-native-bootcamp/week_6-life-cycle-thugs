@@ -6,7 +6,7 @@ import {Alert} from 'react-native';
 
 export const FavoritesContext = createContext();
 
-export default function BooksProvide({children}) {
+export default function FavoritesProvider({children}) {
   const [state, dispatch] = useReducer(reducer, store);
 
   const getStorageData = async () => {

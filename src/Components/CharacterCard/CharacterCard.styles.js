@@ -1,24 +1,48 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
+import colors from '../../styles/colors';
+import font from '../../styles/font';
 import radius from '../../styles/radius';
 import spacing from '../../styles/spacing';
-import colors from '../../styles/colors';
-export default StyleSheet.create({
-  container: {
-    flex: 1,
-    borderRadius: radius.soft,
-    margin: spacing.medium,
-    backgroundColor: colors.secondary,
-  },
-  inner_container: {
-    margin: spacing.medium,
-  },
+
+const {width} = Dimensions.get('window');
+const styles = StyleSheet.create({
   image: {
-    alignSelf: 'center',
-    width: 150,
     height: 250,
-    resizeMode: 'contain',
+    width: width / 2 - spacing.large * 2,
+    resizeMode: 'cover',
+    margin: spacing.large,
+    justifyContent: 'flex-end',
+    borderRadius: radius.soft,
+    overflow: 'hidden',
+    borderWidth: 0.2,
+    borderColor: colors.tomato,
   },
-  text: {
-    color: colors.dark_Charcoal,
+  title: {
+    fontSize: font.subtitle,
+    fontWeight: 'bold',
+    color: colors.white,
+  },
+  button: {
+    right: spacing.large,
+    top: spacing.large,
+    height: spacing.giant,
+    width: spacing.giant,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'white',
+    borderRadius: radius.smooth,
+    position: 'absolute',
+  },
+  image_color_container: {
+    backgroundColor: '#00000022',
+    position: 'absolute',
+    left: spacing.zero,
+    right: spacing.zero,
+    bottom: spacing.zero,
+    top: spacing.zero,
+  },
+  linear: {
+    padding: spacing.large,
   },
 });
+export default styles;
