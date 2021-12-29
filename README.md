@@ -1,10 +1,10 @@
 
-<h1>Bug Busters - Week 4</h1>
+<h1>Lİfe Cycle Thugs - Week 4</h1>
 <p align="center">
-  <img src="https://media.giphy.com/media/BHaIpz0OS1OWAa3MyL/giphy.gif" width='220'>
-  <img src="https://media.giphy.com/media/9jeX8o5pWxCGAU15M4/giphy.gif" width='220' >
-  <img src="https://media.giphy.com/media/z1jl8cL5QB2ns0nXZO/giphy.gif" width='220'>
-   <img src="https://media.giphy.com/media/UZ5EeOf98I7PEMLKcR/giphy.gif" width='220'>
+  <img src="https://media.giphy.com/media/BHaIpz0OS1OWAa3MyL/giphy.gif" width='200'>
+  <img src="https://media.giphy.com/media/9jeX8o5pWxCGAU15M4/giphy.gif" width='200' >
+  <img src="https://media.giphy.com/media/z1jl8cL5QB2ns0nXZO/giphy.gif" width='200'>
+   <img src="https://media.giphy.com/media/UZ5EeOf98I7PEMLKcR/giphy.gif" width='200'>
 </p>
 
 
