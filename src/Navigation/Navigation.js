@@ -35,29 +35,32 @@ const Navigation = () => {
           headerTintColor: colors.tomato,
         }}>
         <Tab.Screen
-          name={t(routes.COMICS_PAGE)}
+          name={routes.COMICS_PAGE}
           component={Comics}
           options={{
             headerShown: false,
             tabBarIcon: ({color}) => (
               <Comic name="book-open" color={color} size={20} />
             ),
+            tabBarLabel: t('Comics'),
           }}
         />
         <Tab.Screen
           options={{
+            tabBarLabel: t('Character'),
             headerShown: false,
             tabBarIcon: ({color}) => (
               <Spider name="spider" color={color} size={20} />
             ),
           }}
-          name={t(routes.CHARACTER_STACK)}
+          name={routes.CHARACTER_STACK}
           component={DetailStack}
         />
         <Tab.Screen
-          name={t(routes.FAVORITES_PAGE)}
+          name={routes.FAVORITES_PAGE}
           component={Favorites}
           options={{
+            tabBarLabel: t('Favorites'),
             headerShown: false,
             tabBarIcon: ({color}) => (
               <Favorite name="md-heart-circle" color={color} size={28} />
@@ -65,9 +68,10 @@ const Navigation = () => {
           }}
         />
         <Tab.Screen
-          name={t(routes.SETTINGS_PAGE)}
+          name={routes.SETTINGS_PAGE}
           component={Settings}
           options={{
+            tabBarLabel: t('Settings'),
             headerShown: false,
             tabBarIcon: ({color}) => (
               <Setting name="ios-settings-sharp" color={color} size={28} />
