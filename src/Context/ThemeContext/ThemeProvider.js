@@ -1,7 +1,5 @@
 import React, {createContext, useReducer, useEffect, useState} from 'react';
 import {Appearance} from 'react-native';
-import reducer from './reducer';
-import store from './store';
 
 export const ThemeContext = createContext();
 
